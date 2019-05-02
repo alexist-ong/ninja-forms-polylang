@@ -2,7 +2,7 @@
 
 /*
   Plugin Name: Integrate Ninja Forms + Polylang
-  Plugin URI:  https://github.com/pdme/gravity-forms-polylang
+  Plugin URI:  https://github.com/alexist-ong/ninja-forms-polylang
   Description: Add form titles, descriptions, field labels, etc, to Polylang string translations
   Version:     3.0
   Author:      Alexist Ong
