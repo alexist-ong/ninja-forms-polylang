@@ -38,23 +38,25 @@ if (!class_exists('NF_PLL')) :
             $this->action_whitelist = array(
                 'email_subject',
                 'email_message',
+                'email_message_plain',
                 'success_msg'
             );
         }
 
         public function register_strings() {
-            if (!class_exists('Ninja_Forms') || !function_exists('pll_register_string'))
+            if (!class_exists('Ninja_Forms') || !function_exists('pll_register_string')) {
                 return;
+            }
 
             $forms = Ninja_Forms()->form()->get_forms();
             foreach ($forms as $form) {
-                $group = "Form #{$form->get_id()}: {$form->get_setting('title')}";
+                $group = "Ninja Form #{$form->get_id()}: {$form->get_setting('title')}";
 
                 //process form settings
                 $form_settings = $form->get_settings();
                 foreach ($form_settings as $form_key => $form_value) {
                     if (in_array($form_key, $this->form_whitelist) && is_string($form_value)) {
-                        pll_register_string('Ninja Form: ' . $form_key, $form_value, $group);
+                        pll_register_string('Form: ' . $form_key, $form_value, $group);
                     }
                 }
 
@@ -85,8 +87,9 @@ if (!class_exists('NF_PLL')) :
         }
 
         public function translate_form_strings($form_settings, $form_id) {
-            if (!class_exists('Ninja_Forms') || !function_exists('pll__'))
-                return;
+            if (!class_exists('Ninja_Forms') || !function_exists('pll__')) {
+                return $form_settings;
+            }
 
             foreach ($form_settings as $form_key => $form_value) {
                 if (in_array($form_key, $this->form_whitelist) && is_string($form_value)) {
@@ -97,8 +100,9 @@ if (!class_exists('NF_PLL')) :
         }
 
         public function translate_field_strings($field) {
-            if (!class_exists('Ninja_Forms') || !function_exists('pll__'))
-                return;
+            if (!class_exists('Ninja_Forms') || !function_exists('pll__')) {
+                return $field;
+            }
 
             $field_settings = $field['settings'];
             foreach ($field_settings as $field_key => $field_value) {
@@ -111,7 +115,28 @@ if (!class_exists('NF_PLL')) :
             return $field;
         }
 
+        public function translate_action_strings($actions, $form_data) {
+            if (!class_exists('Ninja_Forms') || !function_exists('pll__')) {
+                return $actions;
+            }
+
+            $translated_actions = array();
+            foreach ($actions as $action) {
+                $action_settings = $action['settings'];
+                foreach ($action_settings as $action_key => $action_value) {
+                    if (in_array($action_key, $this->action_whitelist) && is_string($action_value)) {
+                        $action_settings[$action_key] = pll__($action_value);
+                    }
+                }
+
+                $action['settings'] = $action_settings;
+                $translated_actions[] = $action;
+            }
+
+            return $translated_actions;
+        }
+
     }
 
-    
+        
 endif;

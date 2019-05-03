@@ -35,10 +35,16 @@ if (!class_exists('NF_PLL_Initialize')) :
             return $nf_pll->translate_field_strings($field);
         }
 
+        public static function translate_action_strings($actions, $form_data) {
+            $nf_pll = new NF_PLL();
+            return $nf_pll->translate_action_strings($actions, $form_data);
+        }
+
     }
 
     add_action('init', array('NF_PLL_Initialize', 'register_strings'));
     add_filter('ninja_forms_display_form_settings', array('NF_PLL_Initialize', 'translate_form_strings'), 10, 2);
     add_filter('ninja_forms_localize_fields', array('NF_PLL_Initialize', 'translate_field_strings'), 10);
+    add_filter('ninja_forms_submission_actions', array('NF_PLL_Initialize', 'translate_action_strings'), 10, 2);
 
 endif;
