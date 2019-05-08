@@ -1,14 +1,15 @@
 <?php
 
 /*
-  Plugin Name: Integrate Ninja Forms + Polylang
-  Plugin URI:  https://github.com/alexist-ong/ninja-forms-polylang
-  Description: Add form titles, descriptions, field labels, etc, to Polylang string translations
-  Version:     3.0
-  Author:      Alexist Ong
-  Author URI:  https://github.com/pdme
-  License:     GPL2
-  License URI: https://www.gnu.org/licenses/gpl-2.0.html
+  Plugin Name:          Integrate Ninja Forms + Polylang
+  Plugin URI:           https://github.com/alexist-ong/ninja-forms-polylang
+  Description:          Add form titles, descriptions, field labels, etc, to Polylang string translations
+  Version:              3.0
+  Author:               Alexist Ong
+  Author URI:           https://github.com/alexist-ong
+  License:              GPL2
+  License URI:          https://www.gnu.org/licenses/gpl-2.0.html
+  GitHub Plugin URI:    https://github.com/alexist-ong/ninja-forms-polylang
  */
 
 if (!defined('ABSPATH'))
