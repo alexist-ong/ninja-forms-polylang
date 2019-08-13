@@ -66,6 +66,9 @@ if (!class_exists('NF_PLL')) :
                     $field_settings = $field->get_settings();
 
                     foreach ($field_settings as $field_key => $field_value) {
+                        if ($field_key == "options") {
+                            pll_register_string('Field: ' . $field_key, $field_settings[$field_key][0]['label'], $group);
+                        }
                         if (in_array($field_key, $this->field_whitelist) && is_string($field_value)) {
                             pll_register_string('Field: ' . $field_key, $field_value, $group);
                         }
@@ -106,6 +109,9 @@ if (!class_exists('NF_PLL')) :
 
             $field_settings = $field['settings'];
             foreach ($field_settings as $field_key => $field_value) {
+                if ($field_key == "options") {
+                    $field_settings[$field_key][0]['label'] = pll__($field_settings[$field_key][0]['label']);
+                }
                 if (in_array($field_key, $this->field_whitelist) && is_string($field_value)) {
                     $field_settings[$field_key] = pll__($field_value);
                 }
