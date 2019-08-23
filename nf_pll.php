@@ -2,14 +2,14 @@
 
 /*
   Plugin Name:          Integrate Ninja Forms + Polylang
-  Plugin URI:           https://github.com/alexist-ong/ninja-forms-polylang
+  Plugin URI:           https://gitlab.com/alexist-ong/ninja-forms-polylang
   Description:          Add form titles, descriptions, field labels, actions, etc. to Polylang string translations
-  Version:              3.0.1
+  Version:              3.1.0
   Author:               Alexist Ong
-  Author URI:           https://github.com/alexist-ong
+  Author URI:           https://gitlab.com/alexist-ong
   License:              GPL2
   License URI:          https://www.gnu.org/licenses/gpl-2.0.html
-  GitHub Plugin URI:    https://github.com/alexist-ong/ninja-forms-polylang
+  GitLab Plugin URI:    https://gitlab.com/alexist-ong/ninja-forms-polylang
  */
 
 if (!defined('ABSPATH'))
