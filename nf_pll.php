@@ -4,7 +4,7 @@
   Plugin Name:          Integrate Ninja Forms + Polylang
   Plugin URI:           https://gitlab.com/alexist-ong/ninja-forms-polylang
   Description:          Add form titles, descriptions, field labels, actions, etc. to Polylang string translations
-  Version:              3.1.0
+  Version:              3.1.1
   Author:               Alexist Ong
   Author URI:           https://gitlab.com/alexist-ong
   License:              GPL2
