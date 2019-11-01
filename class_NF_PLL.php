@@ -32,7 +32,8 @@ if (!class_exists('NF_PLL')) :
                 'placeholder',
                 'default',
                 'help_text',
-                'desc_text'
+                'desc_text',
+                'select_files_text'
             );
 
             $this->action_whitelist = array(
