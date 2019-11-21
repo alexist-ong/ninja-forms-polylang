@@ -23,7 +23,8 @@ if (!class_exists('NF_PLL')) :
                 'fieldNumberIncrementBy',
                 'formErrorsCorrectErrors',
                 'validateRequiredField',
-                'honeypotHoneypotError'
+                'honeypotHoneypotError',
+                'fieldsMarkedRequired'
             );
 
             $this->field_whitelist = array(
