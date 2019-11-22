@@ -71,12 +71,12 @@ if (!class_exists('NF_PLL')) :
                         if (in_array($field_key, $this->field_whitelist) && is_string($field_value)) {
                             pll_register_string('Field: ' . $field_key, $field_value, $group);
                         }
-                    }                    
-                    
+                    }
+
                     //field options
                     if ($field_settings['type'] == 'listcheckbox' || $field_settings['type'] == 'listselect' || $field_settings['type'] == 'listradio') {
                         $options = $field_settings['options'];
-                        
+
                         if (!empty($options)) {
                             foreach ($options as $option) {
                                 if (isset($option['label'])) {
@@ -84,10 +84,10 @@ if (!class_exists('NF_PLL')) :
 
                                     if (!empty($option_label)) {
                                         pll_register_string('Field: ' . $field_settings['type'], $option_label, $group);
-                                    }                            
+                                    }
                                 }
                             }
-                        }                        
+                        }
                     }
                 }
 
@@ -129,7 +129,7 @@ if (!class_exists('NF_PLL')) :
                     $field_settings[$field_key] = pll__($field_value);
                 }
             }
-            
+
             //field options
             if ($field_settings['type'] == 'listcheckbox' || $field_settings['type'] == 'listselect' || $field_settings['type'] == 'listradio') {
                 $options = $field_settings['options'];
@@ -142,17 +142,17 @@ if (!class_exists('NF_PLL')) :
 
                             if (!empty($option_label)) {
                                 $option['label'] = pll__($option_label);
-                            }                            
+                            }
                         }
-                        
+
                         $translated_options[] = $option;
                     }
-                    
+
                     $field_settings['options'] = $translated_options;
-                }                 
+                }
             }
 
-            $field['settings'] = $field_settings;            
+            $field['settings'] = $field_settings;
             return $field;
         }
 
@@ -179,5 +179,5 @@ if (!class_exists('NF_PLL')) :
 
     }
 
-        
+
 endif;
