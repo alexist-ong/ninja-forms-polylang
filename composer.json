@@ -1,0 +1,8 @@
+{
+    "name": "saneosiris/ninja-forms-polylang",
+  "description": "Add form titles, descriptions, field labels, etc, to Polylang string translations.",
+  "type": "wordpress-plugin",
+  "license": "GPLv2-or-later",
+  "prefer-stable": true,
+  "minimum-stability": "dev"
+}
